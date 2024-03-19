@@ -1,3 +1,3 @@
 import { config } from "dotenv";
 config();
-export const { PORT } = process.env;
+export const { PORT, POSTGRES_URI } = process.env;

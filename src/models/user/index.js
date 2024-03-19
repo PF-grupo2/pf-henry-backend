@@ -16,11 +16,6 @@ export const UserModel = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
-            validate: {
-                isEmail: {
-                    msg: "El correo electrónico ingresado no es válido"
-                }
-            }
         },
         password: {
             type: DataTypes.STRING,

@@ -1,9 +1,12 @@
 import { Sequelize } from "sequelize";
 import { POSTGRES_URI } from "../config/index.js";
-import { Product } from "../models/index.js";
+import { ProductModel,UserModel } from "../models/index.js";
 
 const conn = new Sequelize(POSTGRES_URI, { logging: false, native: false });
 
-Product(conn);
+ProductModel(conn);
+UserModel(conn);
 
-export { conn };
+const {Product,User} = conn.models
+
+export { conn, Product,User};

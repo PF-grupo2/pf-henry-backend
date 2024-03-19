@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-export const Product = (sequelize) => {
+export const ProductModel = (sequelize) => {
   sequelize.define(
     "product",
     {
@@ -47,7 +47,7 @@ export const Product = (sequelize) => {
           "Reebok",
           "Adidas",
           "Asics",
-          "Merrel",
+          "Merrell",
           "New Balance",
           "Salomon",
           "Mizuno",

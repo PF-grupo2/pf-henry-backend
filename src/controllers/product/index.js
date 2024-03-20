@@ -1,5 +1,5 @@
-import getAllProducts from "./getAllProducts";
-import getProductById from "./getProductById";
-import getProductByName from "./getProductByName";
+import getAllProducts from "./getAllProducts.js";
+import getProductById from "./getProductByID.js";
+import getProductByName from "./getProductByName.js";
 
-export { getAllProducts, getProductById, getProductByName };
+export default { getAllProducts, getProductById, getProductByName };

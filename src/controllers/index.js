@@ -1,4 +1,4 @@
+import authControllers from "./auth/index.js";
 import userControllers from "./user/index.js";
 import productControllers from "./product/index.js";
-
-export { userControllers, productControllers };
+export { authControllers, userControllers, productControllers };

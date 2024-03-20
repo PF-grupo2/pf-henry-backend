@@ -4,11 +4,9 @@ const deleteUser = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const foundUser = await user.findById(id);
+        const foundUser = await user.findByPk(id);
         if (!foundUser) return res.status(404).json({ error: 'User Not Found' })
-        foundUser.status = false;
-
-        const deletedUser = await foundUser.save();
+        const deletedUser = await foundUser.update({ status: !foundUser.status });
         res.status(200).json(deletedUser);
     }catch(error){
         res.status(500).json({ error: error.message });

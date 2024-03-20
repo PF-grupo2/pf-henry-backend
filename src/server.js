@@ -9,6 +9,8 @@ const server = express();
 server.use(express.json());
 server.use(cors());
 server.use(morgan("dev"));
-server.use(router);
+
+// Route de la api
+server.use("/api/v1", router);
 
 export default server;

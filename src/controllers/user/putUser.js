@@ -1,5 +1,5 @@
 import { User } from "../../database/index.js";
-import { hashPassword } from "../../helpers/bcrypt/index.js";
+import { bcryptHelpers } from "../../helpers/index.js";
 
 const putUser = async (req, res) => {
   const { id } = req.params;
@@ -27,7 +27,7 @@ const putUser = async (req, res) => {
     if (name) foundUser.name = name;
     if (mail) foundUser.mail = mail;
     if (password) {
-      const hashedPassword = await hashPassword(password);
+      const hashedPassword = await bcryptHelpers.hashPassword(password);
       foundUser.password = hashedPassword;
     }
     if (phone) foundUser.phone = phone;

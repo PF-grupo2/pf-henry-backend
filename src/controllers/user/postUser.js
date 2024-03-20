@@ -1,5 +1,5 @@
 import { User } from "../../database/index.js";
-import { hashPassword } from "../../helpers/bcrypt/index.js";
+import { bcryptHelpers } from "../../helpers/index.js";
 
 const postUser = async (req, res) => {
   const { name, mail, password, phone, isAdmin } = req.body;
@@ -20,7 +20,7 @@ const postUser = async (req, res) => {
   }
 
   try {
-    const hashedPassword = await hashPassword(password);
+    const hashedPassword = await bcryptHelpers.hashPassword(password);
     const userData = {
       name,
       mail,

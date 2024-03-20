@@ -61,7 +61,7 @@ export const ProductModel = (sequelize) => {
         ],
       },
       price: {
-        type: DataTypes.FLOAT.UNSIGNED,
+        type: DataTypes.FLOAT,
         allowNull: false,
         validate: {
           min: 1.0,

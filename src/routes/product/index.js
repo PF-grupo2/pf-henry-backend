@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { productControllers } from "../../controllers/index.js";
+import { getPageControllers } from "../../controllers/index.js";
 
 const router = Router();
 
@@ -7,6 +8,8 @@ router.post("/", productControllers.postProducts);
 router.get("/", productControllers.getAllProducts);
 router.get("/detail/:id", productControllers.getProductById);
 router.get("/search", productControllers.getProductByName);
+
+router.get("/page/:shownElements/:pageNum", getPageControllers.getPage);
 
 export default router;
 

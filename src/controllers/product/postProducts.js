@@ -24,7 +24,7 @@ const postProducts = async (req, res) => {
       !stock ||
       !scoreAvg
     )
-      throw Error("Falta información");
+      throw Error("Missing information to create the product");
 
     const data = {
       name,

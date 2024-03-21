@@ -19,21 +19,21 @@ export const ReviewModel = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      Product_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: "Product",
-          key: "id",
-        },
-      },
-      User_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: "User",
-          key: "id",
-        },
-      },
+      // Product_id: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: false,
+      //   references: {
+      //     model: "Product",
+      //     key: "id",
+      //   },
+      // },
+      // User_id: {
+      //   type: DataTypes.INTEGER,
+      //   allowNull: false,
+      //   references: {
+      //     model: "User",
+      //     key: "id",
+      //   },
+      // },
     });
 };

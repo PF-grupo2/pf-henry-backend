@@ -1,4 +1,4 @@
-import { Review } from "../../database";
+import { Review } from "../../database/index.js";
 
 const putReviews = async (req, res) => {
   const { id } = req.params;

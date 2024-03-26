@@ -4,6 +4,8 @@ import { conn } from "./src/database/index.js";
 import { loader } from "./src/scripts/index.js";
 
 
+
+
 conn
   .sync({ force: true, logging: false })
   .then(() => {

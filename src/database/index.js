@@ -10,7 +10,6 @@ const conn = new Sequelize(POSTGRES_URI, { logging: false, native: false });
 
 ProductModel(conn);
 UserModel(conn);
-
 ReviewModel(conn);
 SaleModel(conn);
 SaleDetailModel(conn);

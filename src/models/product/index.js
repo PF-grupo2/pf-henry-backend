@@ -17,11 +17,6 @@ export const ProductModel = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-
-      category: {
-        type: DataTypes.ENUM,
-        values: ["Hombre", "Mujer", "Adulto", "Infantil"],
-      },
       images: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         validate: {
@@ -59,6 +54,56 @@ export const ProductModel = (sequelize) => {
           "Keen",
           "Under Armour",
         ],
+        allowNull: false,
+      },
+      gender: {
+        type: DataTypes.ENUM,
+        values: [
+          "Hombre",
+          "Mujer",
+          "Unisex"
+        ],
+        allowNull: false,
+        defaultValue: "Unisex"
+      },
+      style: {
+        type: DataTypes.ENUM,
+        values: [
+          "Basquet",
+          "Futbol",
+          "Hockey",
+          "Motosport",
+          "Natacion",
+          "Outdoor",
+          "Running",
+          "Tenis",
+          "Training"
+        ],
+        allowNull: false,
+      },
+      size:{
+        type: DataTypes.ARRAY(DataTypes.INTEGER),
+        validate : {
+          min: 30,
+          max: 50
+        },
+        allowNull: false
+      },
+      color:{
+        type: DataTypes.ARRAY(DataTypes.ENUM({
+          values: [
+            "Blanco",
+            "Negro",
+            "Azul",
+            "Amarillo",
+            "Gris",
+            "Verde",
+            "Rojo",
+            "Rosado",
+            "Violeta"
+          ]
+        })),
+        allowNull: false
       },
       price: {
         type: DataTypes.FLOAT,

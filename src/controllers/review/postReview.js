@@ -15,4 +15,4 @@ const postReview = async (req, res) => {
   }
 };
 
-export default postReview;
+export default  postReview;

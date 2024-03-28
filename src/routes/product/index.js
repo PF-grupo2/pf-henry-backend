@@ -5,7 +5,7 @@ import { getPageControllers } from "../../controllers/index.js";
 const router = Router();
 
 router.post("/", productControllers.postProducts);
-router.get("/:shownElements?/:pageNum?/filters?", productControllers.getAllProducts);
+router.get("/:shownElements?/:pageNum?/:filters?", productControllers.getAllProducts);
 router.get("/detail/:id", productControllers.getProductById);
 router.get("/search", productControllers.getProductByName);
 

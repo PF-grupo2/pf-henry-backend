@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { productControllers } from "../../controllers/index.js";
-import { getPageControllers } from "../../controllers/index.js";
 
 const router = Router();
 
@@ -9,11 +8,12 @@ router.get("/listProducts/:shownElements?/:pageNum?/:filters?", productControlle
 router.get("/detail/:id", productControllers.getProductById);
 router.get("/search", productControllers.getProductByName);
 
-router.get("/page/:shownElements/:pageNum", getPageControllers.getPage);
-
 export default router;
 
 // http://localhost:num_port/api/v1/products/
 
 // http://localhost:num_port/api/v1/products/detail/id
 // http://localhost:num_port/api/v1/products/search
+
+
+//instrucciones para usar getAllProducts(con paginado, filtrado y search) en "../../controllers/product/getAllProducts.js"

@@ -1,4 +1,5 @@
 import { DataTypes } from "sequelize";
+import { ENUMS } from "../../config/index.js";
 export const ProductModel = (sequelize) => {
   sequelize.define(
     "Product",
@@ -36,74 +37,35 @@ export const ProductModel = (sequelize) => {
 
       brand: {
         type: DataTypes.ENUM,
-        values: [
-          "Puma",
-          "Nike",
-          "Reebok",
-          "Adidas",
-          "Asics",
-          "Merrell",
-          "New Balance",
-          "Salomon",
-          "Mizuno",
-          "Brooks",
-          "Timberland",
-          "Skechers",
-          "Columbia",
-          "Hoka One One",
-          "Keen",
-          "Under Armour",
-        ],
+        values: ENUMS.brands,
         allowNull: false,
       },
       gender: {
         type: DataTypes.ENUM,
-        values: [
-          "Hombre",
-          "Mujer",
-          "Unisex"
-        ],
+        values: ENUMS.genders,
         allowNull: false,
-        defaultValue: "Unisex"
+        defaultValue: "Unisex",
       },
       style: {
         type: DataTypes.ENUM,
-        values: [
-          "Basquet",
-          "Futbol",
-          "Hockey",
-          "Motosport",
-          "Natacion",
-          "Outdoor",
-          "Running",
-          "Tenis",
-          "Training"
-        ],
+        values: ENUMS.styles,
         allowNull: false,
       },
-      size:{
+      size: {
         type: DataTypes.ARRAY(DataTypes.INTEGER),
-        validate : {
+        validate: {
           min: 30,
-          max: 50
+          max: 50,
         },
-        allowNull: false
+        allowNull: false,
       },
-      color:{
-        type: DataTypes.ARRAY(DataTypes.ENUM({
-          values: [
-            "Blanco",
-            "Negro",
-            "Azul",
-            "Amarillo",
-            "Gris",
-            "Verde",
-            "Rojo",
-            "Rosado",
-            "Violeta"
-          ]
-        })),
-        allowNull: false
+      color: {
+        type: DataTypes.ARRAY(
+          DataTypes.ENUM({
+            values: ENUMS.colors,
+          })
+        ),
+        allowNull: false,
       },
       price: {
         type: DataTypes.FLOAT,

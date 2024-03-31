@@ -29,7 +29,7 @@ export const ENUMS = {
     "Hoka One One",
     "Keen",
     "Under Armour",
-    "Topper",
+    //"Topper",
   ],
   styles: [
     "Basquet",
@@ -54,7 +54,7 @@ export const ENUMS = {
     "Violeta",
   ],
 
-  genders: ["Masculino", "Femenino", "Unisex"],
+  genders: ["Hombre", "Mujer", "Unisex"],
 };
 
 export const { PORT, POSTGRES_URI, SECRET_KEY } = process.env;

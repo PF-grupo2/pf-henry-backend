@@ -4,7 +4,10 @@ const postProducts = async (req, res) => {
   const {
     name,
     description,
-    category,
+    color,
+    size,
+    style,
+    gender,
     images,
     brand,
     price,
@@ -17,11 +20,14 @@ const postProducts = async (req, res) => {
     if (
       !name ||
       !description ||
-      !category ||
       !images ||
       !brand ||
       !price ||
       !stock ||
+      !color ||
+      !size ||
+      !style ||
+      !gender ||
       !scoreAvg
     )
       throw Error("Missing information to create the product");
@@ -29,12 +35,15 @@ const postProducts = async (req, res) => {
     const data = {
       name,
       description,
-      category,
       images,
       brand,
       price,
       stock,
       scoreAvg,
+      color,
+      size,
+      style,
+      gender
     };
     if (offer) data.offer = offer;
     if (status) data.status = status;

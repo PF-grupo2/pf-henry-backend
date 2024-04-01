@@ -37,6 +37,7 @@ const getAllProducts = async (req, res) => {
           } else { conditions[filter] = { [Op.in]: filters[filter] }} //ejecuta si el campo por el que se filtra no es un arreglo(brands,gender,etc)
       }
       data.totalCoincidences = await Product.count({where: conditions});//cuenta la total existencia de coincidencias (no toma en cuenta lo mostrado por pagina, si no la suma)
+      data.totalPages =  Math.ceil(data.totalCoincidences / shownElements);
     }
     
     data.products = await Product.findAll({//hace la busqueda

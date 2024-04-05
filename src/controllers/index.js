@@ -6,4 +6,6 @@ import productControllers from "./product/index.js";
 import saleControllers from "./sale/index.js";
 
 
-export { authControllers, userControllers, productControllers, reviewControllers, saleDetailControllers, saleControllers };
+
+export { authControllers, userControllers, productControllers, reviewControllers, saleDetailControllers, saleControllers
+};

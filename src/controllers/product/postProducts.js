@@ -1,4 +1,5 @@
 import { Product } from "../../database/index.js";
+// import { uploadImage } from "../../helpers/imageService/index.js";
 
 const postProducts = async (req, res) => {
   const {
@@ -13,6 +14,8 @@ const postProducts = async (req, res) => {
     offer,
     status,
   } = req.body;
+
+
   try {
     if (
       !name ||
@@ -26,10 +29,18 @@ const postProducts = async (req, res) => {
     )
       throw Error("Missing information to create the product");
 
+
+      // const uploadedImages = [];
+      // for(const image of images) {
+      //   const imageUrl = await uploadImage(image);
+      //   uploadedImages.push(imageUrl)
+      // }
+
     const data = {
       name,
       description,
       category,
+      // images: uploadedImages,
       images,
       brand,
       price,

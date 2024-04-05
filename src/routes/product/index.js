@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { productControllers } from "../../controllers/index.js";
 
+
 /*
 import {
   jwtMiddlewares,
@@ -11,6 +12,8 @@ import {
 const router = Router();
 
 router.post("/", productControllers.postProducts);
+
+
 router.get(
   "/listProducts/:shownElements?/:pageNum?/:filters?",
   productControllers.getAllProducts

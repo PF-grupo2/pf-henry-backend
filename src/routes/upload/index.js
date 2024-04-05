@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { upload, uploadImage } from "../../helpers/imageService/index.js";
+import { uploadImage } from "../../helpers/imageService/index.js";
 
 
 const router = Router()
 
-router.post('/image',  upload.single('image'), async (req, res) =>{
+router.post('/image', async (req, res) =>{
     try {
 
         if(!req.file) {

@@ -7,4 +7,6 @@ import saleControllers from "./sale/index.js";
 import shoppingCartControllers from "./shoppingCart/index.js";
 
 
+
 export { authControllers, userControllers, productControllers, reviewControllers, saleDetailControllers, saleControllers, shoppingCartControllers };
+

@@ -7,6 +7,7 @@ import {
   securityMiddlewares,
 } from "../../middlewares/index.js";
 */
+
 const router = Router();
 
 router.get("/review", reviewControllers.getAllReviews);

@@ -11,6 +11,10 @@ export const nodemailerConfig = {
   },
 };
 
+export const mercadoPagoConfig = {
+  accessToken: process.env.ACCESS_TOKEN,
+};
+
 export const ENUMS = {
   brands: [
     "Puma",

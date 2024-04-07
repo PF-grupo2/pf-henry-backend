@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import { ProductModel, UserModel, ReviewModel, SaleDetailModel, SaleModel } from "../models/index.js";
+import { ProductModel, UserModel, ReviewModel, SaleDetailModel, SaleModel, ShoppingCartModel  } from "../models/index.js";
 
 const { DB_DEPLOY } = process.env;
 
@@ -19,11 +19,12 @@ UserModel(conn);
 ReviewModel(conn);
 SaleModel(conn);
 SaleDetailModel(conn);
+ShoppingCartModel(conn);
 
-const { Product, User, Review, SaleDetail, Sale } = conn.models;
+const { Product, User, Review, SaleDetail, Sale, ShoppingCart } = conn.models;
 
-Product.belongsToMany(User, { as:"favorites", through:"product_has_user"});
-User.belongsToMany(Product, { as: "favorites", through:"product_has_user" });
+Product.belongsToMany(User, { as: "favorites", through: "product_has_user" });
+User.belongsToMany(Product, { as: "favorites", through: "product_has_user" });
 
 Product.hasMany(Review);
 Review.belongsTo(Product);
@@ -40,7 +41,10 @@ Sale.belongsTo(SaleDetail);
 SaleDetail.hasMany(Product);
 Product.belongsTo(SaleDetail);
 
+//  User.hasMany(ShoppingCart);
+//  ShoppingCart.belongsTo(User);
 
+//  Product.belongsToMany(ShoppingCart);
+//  ShoppingCart.belongsToMany(Product);
 
-export { conn, Product, User, Review, SaleDetail, Sale };
-
+export { conn, Product, User, Review, SaleDetail, Sale, ShoppingCart };

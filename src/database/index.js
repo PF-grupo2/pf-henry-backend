@@ -1,4 +1,5 @@
 import { Sequelize } from "sequelize";
+
 import {
   ProductModel,
   UserModel,
@@ -19,6 +20,7 @@ const conn = new Sequelize(DB_DEPLOY || POSTGRES_URI, {
   //     },
   //   },
 });
+
 
 ProductModel(conn);
 UserModel(conn);

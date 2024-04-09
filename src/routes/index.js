@@ -26,7 +26,9 @@ router.use("/sale", saleRoutes);
 router.use("/review", reviewRoutes);
 router.use("/shoppingCart", shoppingCartRoutes);
 
+
 router.use("/mercadopago", mercadoRoutes)
+
 
 
 export default router;

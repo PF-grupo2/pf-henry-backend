@@ -57,4 +57,4 @@ export const ENUMS = {
   genders: ["Hombre", "Mujer", "Unisex"],
 };
 
-export const { PORT, POSTGRES_URI, SECRET_KEY } = process.env;
+export const { PORT, POSTGRES_URI, SECRET_KEY, ACCESS_TOKEN } = process.env;

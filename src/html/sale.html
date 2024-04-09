@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmación de compra</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+      }
+
+      .container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #3a7bd5;
+        color: #fff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .content {
+        margin: 20px;
+      }
+      .content p {
+        font-size: 16px;
+      }
+
+      .order-details {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .order-details th,
+      .order-details td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      .order-details th {
+        background-color: #f2f2f2;
+        font-size: 18px;
+      }
+
+      .order-details tfoot td {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .order-details tfoot td:first-child {
+        background-color: #f2f2f2;
+      }
+
+      .order-details tfoot td:last-child {
+        border-top: 2px solid #000;
+      }
+
+      .order-details tbody tr:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>¡Gracias por tu compra!</h1>
+      </div>
+      <div class="content">
+        <p>Estimado ${name},</p>
+        <p>
+          Tu compra en nuestro ecommerce ha sido confirmada. A continuación,
+          encontrarás los detalles de tu pedido:
+        </p>
+        <table class="order-details">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Valor Unitario</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${products}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">Total</td>
+              <td>$ ${total}</td>
+              <!-- Aquí debe ir el total calculado -->
+            </tr>
+          </tfoot>
+        </table>
+        <p>
+          Si tienes alguna pregunta sobre tu pedido, no dudes en contactarnos.
+        </p>
+        <p>Gracias de nuevo por tu compra.</p>
+        <p>Saludos cordiales,</p>
+        <p>El equipo de Shoe Kingdom</p>
+      </div>
+    </div>
+  </body>
+</html>

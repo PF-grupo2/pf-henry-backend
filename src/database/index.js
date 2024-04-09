@@ -1,20 +1,26 @@
 import { Sequelize } from "sequelize";
 
-import { ProductModel, UserModel, ReviewModel, SaleDetailModel, SaleModel, ShoppingCartModel  } from "../models/index.js";
+import {
+  ProductModel,
+  UserModel,
+  ReviewModel,
+  SaleDetailModel,
+  SaleModel,
+  ShoppingCartModel,
+} from "../models/index.js";
 
-const { DB_DEPLOY } = process.env;
+const { DB_DEPLOY, POSTGRES_URI } = process.env;
 
+const conn = new Sequelize(DB_DEPLOY || POSTGRES_URI, {
+  logging: false,
+  native: false,
+  //   dialectOptions: {
+  //     ssl: {
+  //       require: true,
+  //     },
+  //   },
+});
 
-const conn = new Sequelize(DB_DEPLOY, 
-    { 
-        logging: false, 
-        native: false, 
-        dialectOptions: {
-            ssl: {
-                require: true,
-            }
-        }
-    });
 
 ProductModel(conn);
 UserModel(conn);

@@ -22,4 +22,9 @@ router.put("/sale", saleControllers.putSale);
  * 
  */
 
+/**
+ *
+ * TESTS
+ */
+
 export default router;

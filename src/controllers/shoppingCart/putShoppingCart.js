@@ -2,15 +2,20 @@ import { ShoppingCart } from "../../database/index.js";
 
 const putShoppingCart = async (req, res) => {
   const { id } = req.params;
-  const { amount, date, status } = req.body;
+  const { date, status, UserId, ProductId, productQuantity } = req.body;
 
   try {
     const shoppingCart = await ShoppingCart.findByPk(id);
     if (!shoppingCart) return res.status(404).json({ error: "Shopping cart not found" });
 
-    if (amount) shoppingCart.amount = amount;
+    if (status !== undefined && typeof status === "boolean") {
+      shoppingCart.status = status; 
+    }
     if (date) shoppingCart.date = date;
-    if (status) shoppingCart.status = status;
+    
+    if (UserId) shoppingCart.UserId = UserId;
+    if (ProductId) shoppingCart.ProductId = ProductId;
+    if (productQuantity) shoppingCart.productQuantity = productQuantity;
 
     await shoppingCart.save();
 

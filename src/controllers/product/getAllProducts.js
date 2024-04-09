@@ -68,14 +68,14 @@ export default getAllProducts;
 //para cada filtro se debe escribir el nombre del filtro mas los corchetes y su valor, incluso si son filtros del mismo tipo.
 
 //se puede llamar al endpoint sin especificar ningun filtro y solo las paginas, o no especificar ni las paginas ni los filtros, pero nunca especificar los filtros sin...
-//... las paginas, para tal caso  llamar a los filtros como "http://localhost:num_port/api/v1/products/listProducts/all/1" + filtros.
+//... las paginas, para tal caso  llamar a los filtros como "http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1" + filtros.
 
 //ejemplos de uso:
-//http://localhost:num_port/api/v1/products/listProducts trae toda la api
-//http://localhost:num_port/api/v1/products/listProducts/all/1 trae toda la api tambien
-//http://localhost:num_port/api/v1/products/listProducts/all/1/filters? trae toda la api tambien
-//http://localhost:num_port/api/v1/products/listProducts/all/1/filters?search=zapatillas busca los productos con zapatillas en el nombre
-//http://localhost:num_port/api/v1/products/listProducts/all/1/filters?search=zapatillas&gender[]=Hombre lo mismo pero solo para hombre
-//http://localhost:num_port/api/v1/products/listProducts/all/1/filters?gender[]=Hombre trae todos los productos para hombre
-//http://localhost:num_port/api/v1/products/listProducts/all/1/filters?gender[]=Hombre&brand[]=Nike productos marca nike para hombre
-//http://localhost:num_port/api/v1/products/listProducts/all/1/filters?gender[]=Hombre&brand[]=Nike&brand[]=Puma productos marca nike o puma para hombre
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts trae toda la api
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1 trae toda la api tambien
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1/filters? trae toda la api tambien
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1/filters?search=zapatillas busca los productos con zapatillas en el nombre
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1/filters?search=zapatillas&gender[]=Hombre lo mismo pero solo para hombre
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1/filters?gender[]=Hombre trae todos los productos para hombre
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1/filters?gender[]=Hombre&brand[]=Nike productos marca nike para hombre
+//http://pf-henry-backend.onrender.com/api/v1/products/listProducts/all/1/filters?gender[]=Hombre&brand[]=Nike&brand[]=Puma productos marca nike o puma para hombre

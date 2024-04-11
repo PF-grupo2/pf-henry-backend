@@ -8,25 +8,9 @@ import {
   SaleModel,
   ShoppingCartModel,
 } from "../models/index.js";
+import { DATABASE } from "../config/index.js";
 
-const { DB_DEPLOY, POSTGRES_URI } = process.env;
-
-// PARA DESARROLLO
-const conn = new Sequelize(POSTGRES_URI, {
-  logging: false,
-  native: false,
-});
-
-// PARA PRODUCCION
-// const conn = new Sequelize(DB_DEPLOY || POSTGRES_URI, {
-//   logging: false,
-//   native: false,
-//     dialectOptions: {
-//       ssl: {
-//         require: true,
-//       },
-//     },
-// });
+const conn = new Sequelize(DATABASE.URI, DATABASE.CONFIG);
 
 
 ProductModel(conn);

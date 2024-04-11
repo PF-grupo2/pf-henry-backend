@@ -11,15 +11,22 @@ import {
 
 const { DB_DEPLOY, POSTGRES_URI } = process.env;
 
-const conn = new Sequelize(DB_DEPLOY || POSTGRES_URI, {
+// PARA DESARROLLO
+const conn = new Sequelize(POSTGRES_URI, {
   logging: false,
   native: false,
-  //   dialectOptions: {
-  //     ssl: {
-  //       require: true,
-  //     },
-  //   },
 });
+
+// PARA PRODUCCION
+// const conn = new Sequelize(DB_DEPLOY || POSTGRES_URI, {
+//   logging: false,
+//   native: false,
+//     dialectOptions: {
+//       ssl: {
+//         require: true,
+//       },
+//     },
+// });
 
 
 ProductModel(conn);

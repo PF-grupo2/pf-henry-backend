@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import multer from "multer";
+// import multer from "multer";
 import router from "./routes/index.js";
 
 
@@ -13,11 +13,6 @@ server.use(express.json());
 server.use(cors());
 server.use(morgan("dev"));
 
-// config Multer
-const upload = multer({ dest: "uploads" })
-
-//middleware de Multer para manejar la carga de archivos
-server.use(upload.single("image"));
 
 
 

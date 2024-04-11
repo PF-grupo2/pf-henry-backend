@@ -37,6 +37,8 @@ const postProducts = async (req, res) => {
       //   uploadedImages.push(imageUrl)
       // }
 
+      const imageUrls = req.files.map(file => file.path);
+
     const data = {
       name,
       description,

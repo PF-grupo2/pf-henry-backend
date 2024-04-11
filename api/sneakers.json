@@ -12,8 +12,8 @@
       "brand": "Nike",
       "gender": "Hombre",
       "style": "Basquet",
-      "size": [40,42],
-      "color": ["Blanco","Rojo"],
+      "size": [40, 42],
+      "color": ["Blanco", "Rojo"],
       "images": [
         "https://media2.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-air-max-excee-blanco-510010cd4165118-1.jpg",
         "https://nikearprod.vtexassets.com/arquivos/ids/701120/DM9538_001_A_PREM.jpg?v=638233823351200000",
@@ -32,8 +32,8 @@
       "brand": "Adidas",
       "gender": "Mujer",
       "style": "Running",
-      "size": [35,36,37,38],
-      "color": ["Blanco","Rosado", "Violeta"],
+      "size": [35, 36, 37, 38],
+      "color": ["Blanco", "Rosado", "Violeta"],
       "images": [
         "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/H/Q/HQ6353_0.jpg",
         "https://sevensportio.vtexassets.com/arquivos/ids/278024/GY9353_3.jpg?v=638326532096770000",
@@ -52,8 +52,8 @@
       "brand": "Puma",
       "gender": "Hombre",
       "style": "Futbol",
-      "size": [39,40,41,42,43],
-      "color": ["Negro","Rojo"],
+      "size": [39, 40, 41, 42, 43],
+      "color": ["Negro", "Rojo"],
       "images": [
         "https://acdn.mitiendanube.com/stores/001/998/505/products/53339199-4f6d-4a80-92b7-407875230d111-cca3a9c84365d9799016703426832824-640-0.png",
         "https://www.tradeinn.com/f/13685/136855452/puma-botas-futbol-one-1-synthetic-fg-ag.jpg",
@@ -72,8 +72,8 @@
       "brand": "Reebok",
       "gender": "Unisex",
       "style": "Training",
-      "size": [37,38,39,40,42,44],
-      "color": ["Blanco","Rojo","Verde","Azul"],
+      "size": [37, 38, 39, 40, 42, 44],
+      "color": ["Blanco", "Rojo", "Verde", "Azul"],
       "images": [
         "https://reebokarg.vtexassets.com/arquivos/ids/215406/Imagen-1.jpg?v=638437853723370000",
         "https://reebokarg.vtexassets.com/arquivos/ids/213841/Imagen-1.jpg?v=638432388346070000",
@@ -92,7 +92,7 @@
       "brand": "Asics",
       "gender": "Unisex",
       "style": "Running",
-      "size": [35,36,39,40,42,46,47],
+      "size": [35, 36, 39, 40, 42, 46, 47],
       "color": ["Amarillo", "Verde", "Rojo", "Rosado"],
       "images": [
         "https://asics.vteximg.com.br/arquivos/ids/193044-700-700/1011b547_004_00.jpg?v=638374788945730000",
@@ -112,7 +112,7 @@
       "brand": "Merrell",
       "gender": "Mujer",
       "style": "Outdoor",
-      "size": [34,35,38,40],
+      "size": [34, 35, 38, 40],
       "color": ["Verde"],
       "images": [
         "https://www.outletmerrellargentina.com.ar/images/outletmerrellargentina/botas_De_Monta%C3%b1a_Merrell_Moab_2_Mid_Vent-Argentina-0296742.jpg",
@@ -132,11 +132,11 @@
       "brand": "New Balance",
       "gender": "Unisex",
       "style": "Running",
-      "size": [36,37,44],
+      "size": [36, 37, 44],
       "color": ["Gris", "Rosado"],
       "images": [
-        "https://www.newbalance.com.ar/on/demandware.static/-/Sites-siteCatalog_NbEU/default/dw74b1010d/new_images/N10225075/N10225075070815/N10225075070815-1.jpeg",
-        "https://www.newbalance.com.ar/on/demandware.static/-/Sites-siteCatalog_NbEU/default/dwf866e6bf/new_images/N10225075/N10225075070101/N10225075070101-1.jpeg",
+        "https://www.newbalance.com.ar/on/demandware.static/-/Sites-siteCatalog_NBEU/default/dw3745fa02/new_images/N10225075/N10225075-1.jpeg",
+        "https://www.newbalance.com.ar/on/demandware.static/-/Sites-siteCatalog_NbEU/default/dwf866e6bf/new_images/N10225075/N10225075-1.jpeg",
         "https://www.newbalance.com.ar/on/demandware.static/-/Sites-siteCatalog_NbEU/default/dw8b5bd2dd/new_images/N10225075/N10225075070822/N10225075070822-1.jpeg"
       ]
     },
@@ -152,8 +152,8 @@
       "brand": "Under Armour",
       "gender": "Mujer",
       "style": "Tenis",
-      "size": [33,35,37],
-      "color": ["Blanco","Violeta"],
+      "size": [33, 35, 37],
+      "color": ["Blanco", "Violeta"],
       "images": [
         "https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dwaccc818e/new_images/3024899/3024899-1.jpeg",
         "https://www.underarmour.com.ar/on/demandware.static/-/Sites-underarmour_staging/default/dwdba7d94e/new_images/3026466/3026466-1.jpeg",
@@ -172,8 +172,8 @@
       "brand": "Nike",
       "gender": "Unisex",
       "style": "Futbol",
-      "size": [38,45],
-      "color": ["Blanco","Negro"],
+      "size": [38, 45],
+      "color": ["Blanco", "Negro"],
       "images": [
         "https://acdn.mitiendanube.com/stores/002/042/897/products/a51-fefd1dae0daa3a75a216786745948568-1024-1024.jpeg",
         "https://www.opensports.com.ar/media/catalog/product/cache/4769e4d9f3516e60f2b4303f8e5014a8/A/T/AT5881-010_0.jpg",
@@ -192,7 +192,7 @@
       "brand": "Salomon",
       "gender": "Unisex",
       "style": "Outdoor",
-      "size": [38,40,46],
+      "size": [38, 40, 46],
       "color": ["Negro"],
       "images": [
         "https://www.ondasports.com.ar/13114-thickbox_default/zapatillas-salomon-speedcross-4-negro.jpg",
@@ -212,8 +212,8 @@
       "brand": "Mizuno",
       "gender": "Hombre",
       "style": "Natacion",
-      "size": [42,43,44],
-      "color": ["Azul","Gris"],
+      "size": [42, 43, 44],
+      "color": ["Azul", "Gris"],
       "images": [
         "https://emea.mizuno.com/dw/image/v2/bDbS_PRD/on/demandware.static/-/Sites-masterCatalog_Mizuno/default/dwc68da1cc/SS23/Footwear/SPT%201/SPT4/SH_D1GA331201_00.png?sw=900&sh=900",
         "https://emea.mizuno.com/dw/image/v2/bDbS_PRD/on/demandware.static/-/Sites-masterCatalog_Mizuno/default/dwda2f1458/AW23/sportstyle/SH_D1GA210410_00.png?sw=900&sh=900",
@@ -232,7 +232,7 @@
       "brand": "Brooks",
       "gender": "Unisex",
       "style": "Running",
-      "size": [34,37,39,43],
+      "size": [34, 37, 39, 43],
       "color": ["Gris"],
       "images": [
         "https://actitudsports.com.ar/wp-content/uploads/2021/04/brooks-ghost-10-840xXx90-1.jpg",
@@ -252,8 +252,8 @@
       "brand": "Timberland",
       "gender": "Unisex",
       "style": "Outdoor",
-      "size": [37,42,44],
-      "color": ["Blanco","Rojo","Negro","Azul","Verde","Violeta"],
+      "size": [37, 42, 44],
+      "color": ["Blanco", "Rojo", "Negro", "Azul", "Verde", "Violeta"],
       "images": [
         "https://http2.mlstatic.com/D_NQ_NP_990601-MLA71806490209_092023-O.webp",
         "https://m.media-amazon.com/images/I/81KEsb9OnpL.jpg",
@@ -273,7 +273,7 @@
       "gender": "Mujer",
       "style": "Running",
       "size": [39],
-      "color": ["Blanco","Negro","Rosado","Amarillo"],
+      "color": ["Blanco", "Negro", "Rosado", "Amarillo"],
       "images": [
         "https://sporting.vtexassets.com/arquivos/ids/1005275/S3690051-050-1.jpg?v=638374607553470000",
         "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dw846a42ad/products/SCH172078bLLM/SCH172078bLLM-1.JPG",
@@ -292,8 +292,8 @@
       "brand": "Columbia",
       "gender": "Hombre",
       "style": "Outdoor",
-      "size": [39,40,41,42,43,45,47],
-      "color": ["Negro","Azul","Verde","Gris"],
+      "size": [39, 40, 41, 42, 43, 45, 47],
+      "color": ["Negro", "Azul", "Verde", "Gris"],
       "images": [
         "https://scandinavianar.vtexassets.com/arquivos/ids/176692-800-auto?v=638271843302800000&width=800&height=auto&aspect=true",
         "https://scandinavianar.vtexassets.com/arquivos/ids/172367-500-auto?v=637986116274530000&width=500&height=auto&aspect=true",
@@ -312,8 +312,8 @@
       "brand": "Adidas",
       "gender": "Hombre",
       "style": "Futbol",
-      "size": [42,45,46,47,48],
-      "color": ["Blanco","Negro","Rosado","Gris","Verde"],
+      "size": [42, 45, 46, 47, 48],
+      "color": ["Blanco", "Negro", "Rosado", "Gris", "Verde"],
       "images": [
         "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1794f4aa7b9847799281cab3c2f3421f_9366/PREDATOR_ACCURACY_FG_blanco_GZ2604_HM1.jpg",
         "https://acdn.mitiendanube.com/stores/824/567/products/imagen_1-465ed8e696ee7b592716979243489376-1024-1024.jpg",
@@ -332,8 +332,8 @@
       "brand": "Hoka One One",
       "gender": "Mujer",
       "style": "Running",
-      "size": [34,35,37,39,41],
-      "color": ["Amarillo","Violeta","Gris"],
+      "size": [34, 35, 37, 39, 41],
+      "color": ["Amarillo", "Violeta", "Gris"],
       "images": [
         "https://www.heavenimagenes.com/heavencommerce/fe67b642-6a12-483e-bcbe-437b9235e1d7/images/v2/HOKA/28433_medium.jpg",
         "https://m.media-amazon.com/images/I/6156VpCsH7L._AC_SY675_.jpg",
@@ -352,8 +352,8 @@
       "brand": "Keen",
       "gender": "Unisex",
       "style": "Outdoor",
-      "size": [36,38,39,40,42,44],
-      "color": ["Verde","Negro","Violeta"],
+      "size": [36, 38, 39, 40, 42, 44],
+      "color": ["Verde", "Negro", "Violeta"],
       "images": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRz7QC9W5sGkRe3LK4DA3xumdjO20bgEudSAWLhukLz80ObqQbVMw4Kgtta2SjJWTjKrc&usqp=CAU",
         "https://i.pinimg.com/474x/6b/8d/58/6b8d5863464d147f4bf9c7e25d9b5b96.jpg",
@@ -372,8 +372,8 @@
       "brand": "Under Armour",
       "gender": "Unisex",
       "style": "Running",
-      "size": [34,38,39,43],
-      "color": ["Negro","Gris"],
+      "size": [34, 38, 39, 43],
+      "color": ["Negro", "Gris"],
       "images": [
         "https://www.flcrooks.com/cdn/shop/products/CHEMUL.jpg?v=1616853910",
         "https://i.pinimg.com/474x/6b/8d/58/6b8d5863464d147f4bf9c7e25d9b5b96.jpg",
@@ -392,8 +392,8 @@
       "brand": "Puma",
       "gender": "Unisex",
       "style": "Running",
-      "size": [37,38,39,40],
-      "color": ["Azul","Rojo","Verde","Amarillo","Violeta"],
+      "size": [37, 38, 39, 40],
+      "color": ["Azul", "Rojo", "Verde", "Amarillo", "Violeta"],
       "images": [
         "https://www.tradeinn.com/f/13617/136175778/puma-ignite-evoknit.jpg",
         "https://http2.mlstatic.com/D_NQ_NP_689932-MLA44520626913_012021-O.webp",

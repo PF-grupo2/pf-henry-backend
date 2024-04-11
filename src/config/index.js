@@ -1,13 +1,44 @@
 import { config } from "dotenv";
 config();
+const {
+  DB_DEPLOY,
+  POSTGRES_URI,
+  PORT,
+  SECRET_KEY,
+  ACCESS_TOKEN,
+  GMAIL_USER,
+  GMAIL_PASSWORD,
+  NODE_ENV,
+} = process.env;
+
+const DATABASE = NODE_ENV
+  ? {
+      URI: DB_DEPLOY,
+      CONFIG: {
+        logging: false,
+        native: false,
+        dialectOptions: {
+          ssl: {
+            require: true,
+          },
+        },
+      },
+    }
+  : {
+      URI: POSTGRES_URI,
+      CONFIG: {
+        logging: false,
+        native: false,
+      },
+    };
 
 export const nodemailerConfig = {
   host: "smtp.gmail.com",
   port: 465,
   secure: true,
   auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_PASSWORD,
+    user: GMAIL_USER,
+    pass: GMAIL_PASSWORD,
   },
 };
 
@@ -56,5 +87,4 @@ export const ENUMS = {
 
   genders: ["Hombre", "Mujer", "Unisex"],
 };
-
-export const { PORT, POSTGRES_URI, SECRET_KEY, ACCESS_TOKEN } = process.env;
+export { PORT, SECRET_KEY, ACCESS_TOKEN, DATABASE };

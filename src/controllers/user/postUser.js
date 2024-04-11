@@ -15,8 +15,6 @@ const postUser = async (req, res) => {
         .json("Password has to be between 5 and 25 characters");
     case !/\d/.test(password):
       return res.status(400).json("Password must include at least one number");
-    case !/^\+\d{9,12}$/.test(phone):
-      return res.status(400).json("Invalid phone format");
   }
 
   try {

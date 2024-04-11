@@ -10,12 +10,12 @@ const generatePathName = (fileName) => {
   return pathname;
 };
 
-const send = (to, file) => {
+const send = (to, file, subject) => {
   const transporter = nodemailer.createTransport(nodemailerConfig);
   transporter.sendMail({
     from: nodemailerConfig.auth.user,
     to,
-    subject: `Compra realizada con éxito`,
+    subject,
     html: file,
   });
 };
@@ -26,7 +26,7 @@ const sendEmail = (to, name) => {
     .readFileSync(pathname, { encoding: "utf-8" })
     .toString()
     .replace("${name}", name);
-  send(to, file);
+  send(to, file, "¡Shoe Kingdom te da la Bienvenida!");
 };
 
 const saleNotification = (to, name, products) => {
@@ -51,7 +51,7 @@ const saleNotification = (to, name, products) => {
     .replace("${name}", name)
     .replace("${products}", productsHtml)
     .replace("${total}", total.toFixed(2));
-  send(to, file);
+  send(to, file, "Compra realizada con éxito");
 };
 
 export default { sendEmail, saleNotification };

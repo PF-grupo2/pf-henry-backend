@@ -1,8 +1,7 @@
-import { User } from "../../database/index.js";
 import { bcryptHelpers } from "../../helpers/index.js";
 
 const putUser = async (req, res) => {
-  const { id } = req.params;
+  const user = req.user;
   const { name, mail, password, phone } = req.body;
 
   switch (true) {
@@ -16,24 +15,20 @@ const putUser = async (req, res) => {
         .json("Password has to be between 5 and 25 characters");
     case password && !/\d/.test(password):
       return res.status(400).json("Password must include at least one number");
-    case phone && !/^\+\d{9,12}$/.test(phone):
-      return res.status(400).json("Invalid phone format");
   }
 
   try {
-    const foundUser = await User.findByPk(id);
-    if (!foundUser) return res.status(404).json({ error: "User Not Found" });
-
-    if (name) foundUser.name = name;
-    if (mail) foundUser.mail = mail;
+    if (name) user.name = name;
+    if (mail) user.mail = mail;
     if (password) {
       const hashedPassword = await bcryptHelpers.hashPassword(password);
-      foundUser.password = hashedPassword;
+      user.password = hashedPassword;
     }
-    if (phone) foundUser.phone = phone;
-
-    const updatedUser = await foundUser.save();
-    res.status(200).json(updatedUser);
+    if (phone) user.phone = phone;
+    await user.save();
+    res.status(200).json({
+      message: "Información actualizada con éxito",
+    });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

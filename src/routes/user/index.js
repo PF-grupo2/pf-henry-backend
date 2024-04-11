@@ -1,41 +1,39 @@
 import { Router } from "express";
 import { userControllers } from "../../controllers/index.js";
 
-// Descomentar esto para usar
-/*
 import {
   jwtMiddlewares,
   securityMiddlewares,
+  validationMiddlewares,
 } from "../../middlewares/index.js";
-*/
+
+import { check } from "express-validator";
+import { validationsHelpers } from "../../helpers/index.js";
+
 const router = Router();
 
-router.post("/users", userControllers.postUser);
-router.put("/users/:id", userControllers.putUser);
-router.put("/userDelete/:id", userControllers.deleteUser);
-router.get("/users", userControllers.getUsers);
+router.post(
+  "/register",
+  [
+    check("name", "El nombre del usuario es obligatorio").not().isEmpty(),
+    check("mail", "El mail del usuario es obligatorio").not().isEmpty(),
+    check("mail", "El mail no es un email válido").isEmail(),
+    check("mail").custom(validationsHelpers.userValidations.existUser),
+    check("phone", "El teléfono es obligatorio").not().isEmpty(),
+    check("password", "La contraseña es obligatoria").not().isEmpty(),
 
-// Estas acciones requieren de un token y verificar si el usuario ha sido autenticado correctamente
-// Para obtener la lista de usuarios adicionalmente debemos verificar si el usuario que quiere la lista es un administrador
-
-// La forma de enviar al token desde el frontend a traves de una peticion axios es la siguiente
-// Obligatoriamente debe ser enviada con el nombre de x-token
-// axios(url,data,{headers: { "x-token": token}   })
-// Para usar descomentar estas lineas y borrar las peticiones similares
-
-/*
-router.put("/users/:id", jwtMiddlewares.validatJWT, userControllers.putUser);
-router.put(
-  "/userDelete/:id",
-  jwtMiddlewares.validatJWT,
-  userControllers.deleteUser
+    validationMiddlewares.fieldsValidate,
+  ],
+  userControllers.postUser
 );
+
+router.put("/update", jwtMiddlewares.validatJWT, userControllers.putUser);
+router.put("/delete", jwtMiddlewares.validatJWT, userControllers.deleteUser);
 router.get(
-  "/users",
+  "/list",
   jwtMiddlewares.validatJWT,
   securityMiddlewares.isAdmin,
   userControllers.getUsers
 );
-*/
 
 export default router;

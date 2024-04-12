@@ -5,8 +5,11 @@ const postProducts = async (req, res) => {
   const {
     name,
     description,
-    // category,
-    // images,
+    images,
+    style,
+    gender,
+    color,
+    size,
     brand,
     price,
     stock,
@@ -37,17 +40,20 @@ const postProducts = async (req, res) => {
       //   uploadedImages.push(imageUrl)
       // }
 
-      const imageUrls = req.files.map(file => file.path);
+      //const imageUrls = req.files.map(file => file.path);
 
     const data = {
       name,
       description,
-      // category,
-      images: uploadedImages,
+      images,
       brand,
       price,
       stock,
       scoreAvg,
+      style,
+      gender,
+      color,
+      size,
     };
     if (offer) data.offer = offer;
     if (status) data.status = status;

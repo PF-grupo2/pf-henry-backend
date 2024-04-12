@@ -1,23 +1,16 @@
 import { DataTypes } from "sequelize";
-
-export const ReviewModel = (sequelize) => {
-  sequelize.define("Review", {
+export const CartItemsModel = (sequelize) => {
+  sequelize.define("CartItem", {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
-    score: {
+
+    quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        min: 1,
-        max: 5,
-      },
-    },
-    message: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+      defaultValue: 1,
     },
     ProductId: {
       type: DataTypes.UUID,
@@ -27,11 +20,12 @@ export const ReviewModel = (sequelize) => {
         key: "id",
       },
     },
-    UserId: {
+
+    CartId: {
       type: DataTypes.UUID,
       allowNull: false,
       references: {
-        model: "Users",
+        model: "Carts",
         key: "id",
       },
     },

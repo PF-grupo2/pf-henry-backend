@@ -5,7 +5,8 @@ import {
   ReviewModel,
   SaleDetailModel,
   SaleModel,
-  ShoppingCartModel,
+  CartModel,
+  CartItemsModel,
 } from "../models/index.js";
 import { DATABASE } from "../config/index.js";
 
@@ -16,9 +17,10 @@ UserModel(conn);
 ReviewModel(conn);
 SaleModel(conn);
 SaleDetailModel(conn);
-ShoppingCartModel(conn);
+CartModel(conn);
+CartItemsModel(conn);
 
-const { Product, User, Review, SaleDetail, Sale, ShoppingCart } = conn.models;
+const { Product, User, Review, SaleDetail, Sale, Cart, CartItem } = conn.models;
 
 Product.belongsToMany(User, { as: "favorites", through: "product_has_user" });
 User.belongsToMany(Product, { as: "favorites", through: "product_has_user" });
@@ -38,10 +40,10 @@ Sale.belongsTo(SaleDetail);
 SaleDetail.hasMany(Product);
 Product.belongsTo(SaleDetail);
 
-//  User.hasMany(ShoppingCart);
-//  ShoppingCart.belongsTo(User);
+User.hasMany(Cart);
+Cart.belongsTo(User);
 
-//  Product.belongsToMany(ShoppingCart);
-//  ShoppingCart.belongsToMany(Product);
+Cart.hasMany(CartItem);
+CartItem.belongsTo(Cart);
 
-export { conn, Product, User, Review, SaleDetail, Sale, ShoppingCart };
+export { conn, Product, User, Review, SaleDetail, Sale, Cart, CartItem };

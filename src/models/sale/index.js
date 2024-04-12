@@ -5,9 +5,9 @@ export const SaleModel = (sequelize) => {
     "Sale",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         primaryKey: true,
-        autoIncrement: true,
+        defaultValue: DataTypes.UUIDV4,
       },
       total: {
         type: DataTypes.DOUBLE,
@@ -25,16 +25,16 @@ export const SaleModel = (sequelize) => {
       },
       status: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
+        defaultValue: true,
       },
-    //   User_id: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     references: {
-    //       model: "User",
-    //       key: "id",
-    //     },
-    //   },
+      UserId: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        references: {
+          model: "Users",
+          key: "id",
+        },
+      },
     },
     {
       timestamps: false,

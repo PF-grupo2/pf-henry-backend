@@ -5,9 +5,9 @@ export const ProductModel = (sequelize) => {
     "Product",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID,
         primaryKey: true,
-        autoIncrement: true,
+        defaultValue: DataTypes.UUIDV4,
       },
       name: {
         type: DataTypes.STRING,
@@ -60,12 +60,19 @@ export const ProductModel = (sequelize) => {
         allowNull: false,
       },
       color: {
-        type: DataTypes.ARRAY(
-          DataTypes.ENUM({
-            values: ENUMS.colors,
-          })
-        ),
+        type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: false,
+        validate: {
+          isValidColors(value) {
+            if (!Array.isArray(value) || !value.length)
+              throw new Error("Necesitas especificar uno o más colores");
+
+            const colorFound = value.some((color) =>
+              ENUMS.colors.includes(color)
+            );
+            if (!colorFound) throw new Error("Color no válido");
+          },
+        },
       },
       price: {
         type: DataTypes.FLOAT,

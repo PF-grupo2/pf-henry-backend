@@ -1,4 +1,4 @@
-import { ShoppingCart } from "../../database/index.js";
+import { Cart } from "../../database/index.js";
 
 const putShoppingCart = async (req, res) => {
   const { id } = req.params;
@@ -7,8 +7,9 @@ const putShoppingCart = async (req, res) => {
 
 
   try {
-    const shoppingCart = await ShoppingCart.findByPk(id);
-    if (!shoppingCart) return res.status(404).json({ error: "Shopping cart not found" });
+    const shoppingCart = await Cart.findByPk(id);
+    if (!shoppingCart)
+      return res.status(404).json({ error: "Shopping cart not found" });
 
 
     if (status !== undefined && typeof status === "boolean") {

@@ -1,7 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
       "name": "Zapatillas Nike Air Max",
       "price": 120.99,
       "description": "Zapatillas deportivas para correr con tecnología Air Max de Nike.",
@@ -21,7 +20,6 @@
       ]
     },
     {
-      "id": 2,
       "name": "Zapatillas Adidas Ultraboost",
       "price": 139.99,
       "description": "Zapatillas deportivas para correr con tecnología Ultraboost de Adidas.",
@@ -41,7 +39,6 @@
       ]
     },
     {
-      "id": 3,
       "name": "botines Puma One",
       "price": 89.99,
       "description": "botines de fútbol Puma One, ideales para jugar en césped natural.",
@@ -61,7 +58,6 @@
       ]
     },
     {
-      "id": 4,
       "name": "Zapatillas Reebok Nano",
       "price": 99.99,
       "description": "Zapatillas de entrenamiento Reebok Nano, diseñadas para levantamiento de pesas y entrenamientos funcionales.",
@@ -81,7 +77,6 @@
       ]
     },
     {
-      "id": 5,
       "name": "Zapatillas Asics Gel Nimbus",
       "price": 149.99,
       "description": "Zapatillas de running Asics Gel Nimbus con amortiguación de gel para una carrera suave y cómoda.",
@@ -101,7 +96,6 @@
       ]
     },
     {
-      "id": 6,
       "name": "botas Merrell Moab",
       "price": 129.99,
       "description": "botas de senderismo Merrell Moab, impermeables y resistentes para aventuras al aire libre.",
@@ -121,7 +115,6 @@
       ]
     },
     {
-      "id": 7,
       "name": "Zapatillas New balance Fresh Foam",
       "price": 109.99,
       "description": "Zapatillas de running New balance Fresh Foam con una entresuela suave para una amortiguación superior.",
@@ -141,7 +134,6 @@
       ]
     },
     {
-      "id": 8,
       "name": "Zapatillas Under Armour HOVR",
       "price": 129.99,
       "description": "Zapatillas de running Under Armour HOVR con tecnología de amortiguación y retorno de energía.",
@@ -161,7 +153,6 @@
       ]
     },
     {
-      "id": 9,
       "name": "botines Nike Tiempo Legend",
       "price": 79.99,
       "description": "botines de fútbol Nike Tiempo Legend con cuero premium para un toque de balón excepcional.",
@@ -181,7 +172,6 @@
       ]
     },
     {
-      "id": 10,
       "name": "Zapatillas Salomon Speedcross",
       "price": 139.99,
       "description": "Zapatillas de trail running Salomon Speedcross con agarre agresivo para terrenos difíciles.",
@@ -201,7 +191,6 @@
       ]
     },
     {
-      "id": 11,
       "name": "Zapatillas Mizuno Wave Rider",
       "price": 129.99,
       "description": "Zapatillas de running Mizuno Wave Rider con una combinación perfecta de amortiguación y sujeción.",
@@ -221,7 +210,6 @@
       ]
     },
     {
-      "id": 12,
       "name": "Zapatillas brooks Ghost",
       "price": 119.99,
       "description": "Zapatillas de running brooks Ghost con una amortiguación suave y transpirable.",
@@ -241,7 +229,6 @@
       ]
     },
     {
-      "id": 13,
       "name": "botas Timberland Chocorua",
       "price": 159.99,
       "description": "botas de senderismo Timberland Chocorua resistentes al agua y duraderas.",
@@ -261,7 +248,6 @@
       ]
     },
     {
-      "id": 14,
       "name": "Zapatillas Skechers Go Run",
       "price": 89.99,
       "description": "Zapatillas de running Skechers Go Run con una entresuela ligera y flexible.",
@@ -281,7 +267,6 @@
       ]
     },
     {
-      "id": 15,
       "name": "Zapatillas Columbia Redmond",
       "price": 109.99,
       "description": "Zapatillas de senderismo Columbia Redmond con una construcción duradera y resistente.",
@@ -301,7 +286,6 @@
       ]
     },
     {
-      "id": 16,
       "name": "botines Adidas Predator",
       "price": 99.99,
       "description": "botines de fútbol Adidas Predator con tecnología de control de balón.",
@@ -321,7 +305,6 @@
       ]
     },
     {
-      "id": 17,
       "name": "Zapatillas Hoka One One Clifton",
       "price": 159.99,
       "description": "Zapatillas de running Hoka One One Clifton con una amortiguación excepcionalmente suave.",
@@ -341,7 +324,6 @@
       ]
     },
     {
-      "id": 18,
       "name": "botas Keen Targhee",
       "price": 129.99,
       "description": "botas de senderismo Keen Targhee impermeables y duraderas.",
@@ -361,7 +343,6 @@
       ]
     },
     {
-      "id": 19,
       "name": "Zapatillas Under Armour Charged Assert",
       "price": 99.99,
       "description": "Zapatillas de running Under Armour Charged Assert con amortiguación y soporte.",
@@ -381,7 +362,6 @@
       ]
     },
     {
-      "id": 20,
       "name": "Zapatillas Puma Ignite",
       "price": 79.99,
       "description": "Zapatillas de running Puma Ignite con entresuela de espuma para mayor comodidad.",

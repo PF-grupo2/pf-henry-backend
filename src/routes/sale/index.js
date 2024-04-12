@@ -1,30 +1,31 @@
 import { Router } from "express";
 import { saleControllers } from "../../controllers/index.js";
-
-// import { jwtMiddlewares } from "../../middlewares/index.js";
+import {
+  jwtMiddlewares,
+  securityMiddlewares,
+} from "../../middlewares/index.js";
+import { check } from "express-validator";
 
 const router = Router();
 
-router.delete("/sale/id", saleControllers.deleteSale);
-router.post("/sale/id", saleControllers.postSale);
-router.get("/sale", saleControllers.getSale);
-router.put("/sale", saleControllers.putSale);
+router.get(
+  "/list",
+  jwtMiddlewares.validatJWT,
+  securityMiddlewares.isAdmin,
+  saleControllers.getSale
+);
+router.post(
+  "/new",
+  [check("total").not().isEmpty()],
+  jwtMiddlewares.validatJWT,
+  saleControllers.postSale
+);
 
-/**
- * 
- * Middleware Implementation
- * 
- * 
- *    router.delete("/sale/id",jwtMiddlewares.validatJWT, saleControllers.deleteSale);
-   router.post("/sale/id", jwtMiddlewares.validatJWT, saleControllers.postSale);
-   router.get("/sale", jwtMiddlewares.validatJWT,saleControllers.getSale);
-   router.put("/sale", jwtMiddlewares.validatJWT,saleControllers.putSale);
- * 
- */
-
-/**
- *
- * TESTS
- */
+router.put("/sale", jwtMiddlewares.validatJWT, saleControllers.putSale);
+router.delete(
+  "/sale/id",
+  jwtMiddlewares.validatJWT,
+  saleControllers.deleteSale
+);
 
 export default router;

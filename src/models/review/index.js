@@ -19,6 +19,11 @@ export const ReviewModel = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    status: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    },
     ProductId: {
       type: DataTypes.UUID,
       allowNull: false,

@@ -1,7 +1,8 @@
 import { bcryptHelpers } from "../../helpers/index.js";
+import { User } from "../../database/index.js";
 
 const putUser = async (req, res) => {
-  const user = req.user;
+  const { id } = req.params;
   const { name, mail, password, phone } = req.body;
 
   switch (true) {
@@ -18,6 +19,7 @@ const putUser = async (req, res) => {
   }
 
   try {
+    const user = await User.findByPk(id);
     if (name) user.name = name;
     if (mail) user.mail = mail;
     if (password) {
@@ -27,7 +29,7 @@ const putUser = async (req, res) => {
     if (phone) user.phone = phone;
     await user.save();
     res.status(200).json({
-      message: "Información actualizada con éxito",
+      message: `Información actualizada con éxito al usuario: ${user.name}`,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });

@@ -3,7 +3,7 @@ import { User } from "../../database/index.js";
 const deleteUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findByPk(id)
+    const user = await User.findByPk(id);
     await user.update({ status: user.status===false });
     res.status(200).json(
       user.status===true

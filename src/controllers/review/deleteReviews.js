@@ -6,7 +6,7 @@ const deleteReviews = async (req, res) => {
   try {
     const review = await Review.findByPk(id);
     if (!review) return res.status(404).json({ error: "Review not found" });
-    const deletedReview = Review.update({ status: !review.status });
+    const deletedReview = await Review.update({ status: !review.status }, { where: { id: id } });
     res.status(200).json(deletedReview);
   } catch (error) {
     res.status(500).json({ error: error.message });

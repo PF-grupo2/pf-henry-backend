@@ -1,10 +1,15 @@
+import { User } from "../../database/index.js";
+
 const deleteUser = async (req, res) => {
-  const user = req.user;
+  const { id } = req.params;
   try {
-    await user.update({ status: false });
-    res.status(200).json({
-      message: "Usuario eliminado con éxito",
-    });
+    const user = await User.findByPk(id)
+    await user.update({ status: user.status===false });
+    res.status(200).json(
+      user.status===true
+          ? {message: `ban to user: ${user.name}, removed`}
+          : {message: `banned user: ${user.name}`}
+    );
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

@@ -28,11 +28,12 @@ router.post(
 );
 
 router.put("/update", jwtMiddlewares.validatJWT, userControllers.putUser);
-router.put("/delete", jwtMiddlewares.validatJWT, userControllers.deleteUser);
+router.put("/delete/:id", /*jwtMiddlewares.validatJWT,*/ userControllers.deleteUser);
+router.put("/admin/:id", /*jwtMiddlewares.validatJWT,*/ userControllers.giveAdmin);
 router.get(
   "/list",
-  jwtMiddlewares.validatJWT,
-  securityMiddlewares.isAdmin,
+  // jwtMiddlewares.validatJWT,
+  // securityMiddlewares.isAdmin,
   userControllers.getUsers
 );
 

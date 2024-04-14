@@ -17,7 +17,6 @@ const router = Router();
 router.use("/auth", authRoutes);
 router.use("/users", userRoutes);
 router.use("/products", productsRoutes);
-router.use("/review", reviewRoutes);
 
 
 router.use("/upload", uploadRouter);

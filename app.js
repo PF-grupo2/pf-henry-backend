@@ -4,7 +4,7 @@ import { conn } from "./src/database/index.js";
 import { loader } from "./src/scripts/index.js";
 
 conn
-  .sync({ force: true, logging: false })
+  .sync({ force: false, logging: false })
   .then(() => {
     server.listen(PORT, () => {
       console.log(`Server raised in port: ${PORT}`);

@@ -21,9 +21,10 @@ router.post(
   saleControllers.postSale
 );
 
-router.put("/sale", jwtMiddlewares.validatJWT, saleControllers.putSale);
+router.put("/sale/:id", jwtMiddlewares.validatJWT, saleControllers.putSale);
+
 router.delete(
-  "/sale/id",
+  "/sale/:id",
   jwtMiddlewares.validatJWT,
   saleControllers.deleteSale
 );

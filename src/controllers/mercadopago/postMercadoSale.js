@@ -18,8 +18,7 @@ const postMercadoSale = async (req, res) => {
         pending: "https://github.com/PF-grupo2/pf-henry-frontend",
       },
       auto_return: "approved",
-      notification_url:
-        "https://455d-2803-1e10-100-a034-c703-7048-ec03-e134.ngrok-free.app/api/v1/mercadopago/webhook",
+      notification_url: `https://pf-henry-backend-agsr.onrender.com/mercadopago/webhook`,
     };
     const preference = new Preference(client);
     const result = await preference.create({ body });

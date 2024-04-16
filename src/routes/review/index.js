@@ -17,7 +17,7 @@ router.put("/review/:id", reviewControllers.putReviews);
 // Middleware Implementation
 
 
-router.post("/review", jwtMiddlewares.validatJWT, reviewControllers.postReview);
+router.post("/review", /*jwtMiddlewares.validatJWT,*/ reviewControllers.postReview);
 router.delete(
   "/review/:id",
   jwtMiddlewares.validatJWT,
@@ -27,6 +27,13 @@ router.put(
   "/review/:id",
   jwtMiddlewares.validatJWT,
   reviewControllers.putReviews
+);
+
+router.get(
+  "/user/:id",
+  jwtMiddlewares.validatJWT,
+  securityMiddlewares.isAdmin,
+  reviewControllers.getReview.getReviewsByUser
 );
 
 export default router;

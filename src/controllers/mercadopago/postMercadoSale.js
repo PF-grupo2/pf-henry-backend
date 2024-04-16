@@ -1,6 +1,6 @@
 import { MercadoPagoConfig, Preference } from "mercadopago";
 //import { ACCESS_TOKEN } from "../../config/index.js";
-const ACCESS_TOKEN = "TEST-4225693641085466-041217-8ad40e1ad21a377c6a484f94e2031966-125845891"
+const ACCESS_TOKEN = "TEST-8325916074213905-041120-4055cd09b453e71a2e63f60b35942659-1756430153"
 const client = new MercadoPagoConfig({ accessToken: ACCESS_TOKEN});
 
 const postMercadoSale = async (req, res)=>{

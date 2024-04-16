@@ -12,7 +12,7 @@ router.get(
   "/list",
   jwtMiddlewares.validatJWT,
   securityMiddlewares.isAdmin,
-  saleControllers.getSale
+  saleControllers.getSale.getAll
 );
 router.post(
   "/new",
@@ -21,12 +21,25 @@ router.post(
   saleControllers.postSale
 );
 
-router.put("/sale/:id", jwtMiddlewares.validatJWT, saleControllers.putSale);
+router.put("/edit/:id", jwtMiddlewares.validatJWT, saleControllers.putSale);
 
 router.delete(
-  "/sale/:id",
+  "/delete/:id",
   jwtMiddlewares.validatJWT,
   saleControllers.deleteSale
+);
+
+router.get(
+  "/users/:id",
+  jwtMiddlewares.validatJWT,
+  securityMiddlewares.isAdmin,
+  saleControllers.getSale.getSalesByUser
+);
+router.get(
+  "/products/:id",
+  jwtMiddlewares.validatJWT,
+  securityMiddlewares.isAdmin,
+  saleControllers.getSale.getSalesByProduct
 );
 
 export default router;

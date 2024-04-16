@@ -1,3 +1,5 @@
+import { bcryptHelpers } from "../helpers/index.js";
+
 export const products = [
   {
     name: "Zapatillas Nike Air Max",
@@ -399,3 +401,24 @@ export const products = [
     ],
   },
 ];
+
+export const users = [{
+  name: "UserExample",
+  mail: "userexample@gmail.com",
+  password: await bcryptHelpers.hashPassword("UserExample"),
+  phone: "+543424550055"
+},
+{
+  name: "master",
+  mail: "master@gmail.com",
+  password: await bcryptHelpers.hashPassword("master"),
+  phone: "+543424551155",
+  isAdmin: true
+},
+{
+  name: "banedUser",
+  mail: "baned@gmail.com",
+  password: await bcryptHelpers.hashPassword("baned"),
+  phone: "+543424557755",
+  status: false
+}]

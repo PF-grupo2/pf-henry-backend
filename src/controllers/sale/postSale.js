@@ -1,14 +1,14 @@
 import { Sale } from "../../database/index.js";
 
 const postSale = async (req, res) => {
-  const user = req.user;
-  const { total, date } = req.body;
-
+  
+  const { total, date, status, UserId } = req.body;
+  console.log(req.body, "body");
   try {
-    if (!total || !date) throw Error("Missing information to create sale");
+    if (!total || !date || !status || !UserId) throw new Error( "Missing information to create sale");
 
-    const data = { total, date, UserId: user.id };
-
+    const data = { total, date, status, UserId };
+     console.log(data, "data");
     const newSale = await Sale.create(data);
     res.status(200).json(newSale);
   } catch (error) {

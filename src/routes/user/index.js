@@ -27,7 +27,7 @@ router.post(
   userControllers.postUser
 );
 
-router.put("/update", jwtMiddlewares.validatJWT, userControllers.putUser);
+router.put("/update/:id", /*jwtMiddlewares.validatJWT,*/ userControllers.putUser);
 router.put("/delete/:id", /*jwtMiddlewares.validatJWT,*/ userControllers.deleteUser);
 router.put("/admin/:id", /*jwtMiddlewares.validatJWT,*/ userControllers.giveAdmin);
 router.get(

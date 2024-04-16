@@ -21,7 +21,7 @@ export const ProductModel = (sequelize) => {
       images: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         validate: {
-          isArray: true,
+          // isArray: true,
           isUrl: (value) => {
             const urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/;
             for (let i = 0; i < value.length; i++) {

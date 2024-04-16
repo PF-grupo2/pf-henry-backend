@@ -13,6 +13,19 @@ server.use(express.json());
 server.use(cors());
 server.use(morgan("dev"));
 
+server.use((req, res, next) => {
+    res.header(
+      "Access-Control-Allow-Origin",
+      "https://pf-henry-backend.onrender.com/"
+    );
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin,X-Requested-With,Content-Type,Accept,x-token"
+    );
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE");
+    next();
+  });
 
 
 

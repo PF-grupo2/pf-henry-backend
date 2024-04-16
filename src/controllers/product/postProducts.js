@@ -23,12 +23,10 @@ const postProducts = async (req, res) => {
     if (
       !name ||
       !description ||
-      // !category ||
       // !images ||
       !brand ||
       !price ||
-      !stock ||
-      !scoreAvg
+      !stock 
     )
       throw Error("Missing information to create the product");
 
@@ -40,7 +38,7 @@ const postProducts = async (req, res) => {
       //   uploadedImages.push(imageUrl)
       // }
 
-      //const imageUrls = req.files.map(file => file.path);
+      // const imageUrls = req.files.map(file => file.path);
 
     const data = {
       name,

@@ -10,7 +10,11 @@ const server = express();
 // Middlewares
 server.use(express.json());
 server.use(cors({
-  origin: ["https://pf-henry-backend.onrender.com", "http://localhost:5173"],
+  origin: [
+    "https://pf-henry-backend.onrender.com",
+     "http://localhost:5173",
+     "https://shoe-kingdom-ae164.web.app/",
+    ],
   credentials: true,
 }));
 server.use(morgan("dev"));

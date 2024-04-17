@@ -36,4 +36,11 @@ router.get(
   reviewControllers.getReview.getReviewsByUser
 );
 
+router.get(
+  "/product/:id",
+  jwtMiddlewares.validatJWT,
+  securityMiddlewares.isAdmin,
+  reviewControllers.getReview.getReviewsByProduct
+)
+
 export default router;

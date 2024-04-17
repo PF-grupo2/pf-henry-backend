@@ -1,5 +1,5 @@
 import { Product } from "../../database/index.js";
-// import { uploadImage } from "../../helpers/imageService/index.js";
+
 
 const postProducts = async (req, res) => {
   const {

@@ -2,7 +2,9 @@ import { Sale, SaleDetail } from "../../database/index.js";
 
 const getAll = async (req, res) => {
   try {
-    const sale = await Sale.findAll();
+    const sale = await Sale.findAll({
+      include: [SaleDetail],
+    });
     res.json(sale);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -33,6 +35,7 @@ const getSalesByProduct = async (req, res) => {
       where: {
         ProductId: id,
       },
+      include: [SaleDetail],
     });
 
     return res.status(200).json(sales);

@@ -17,7 +17,7 @@ router.put("/review/:id", reviewControllers.putReviews);
 // Middleware Implementation
 
 
-router.post("/review", /*jwtMiddlewares.validatJWT,*/ reviewControllers.postReview);
+router.post("/review", jwtMiddlewares.validatJWT, reviewControllers.postReview);
 router.delete(
   "/review/:id",
   jwtMiddlewares.validatJWT,

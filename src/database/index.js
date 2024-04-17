@@ -13,7 +13,6 @@ import { DATABASE } from "../config/index.js";
 
 const conn = new Sequelize(DATABASE.URI, DATABASE.CONFIG);
 
-
 ProductModel(conn);
 UserModel(conn);
 ReviewModel(conn);
@@ -36,8 +35,8 @@ Sale.belongsTo(User);
 User.hasMany(Review);
 Review.belongsTo(User);
 
-SaleDetail.hasMany(Sale);
-Sale.belongsTo(SaleDetail);
+Sale.hasMany(SaleDetail);
+SaleDetail.belongsTo(Sale);
 
 SaleDetail.hasMany(Product);
 Product.belongsTo(SaleDetail);

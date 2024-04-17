@@ -8,12 +8,7 @@ import { check } from "express-validator";
 
 const router = Router();
 
-router.get(
-  "/list",
-  jwtMiddlewares.validatJWT,
-  securityMiddlewares.isAdmin,
-  saleControllers.getSale.getAll
-);
+router.get("/list", saleControllers.getSale.getAll);
 router.post(
   "/new",
   [check("total").not().isEmpty()],

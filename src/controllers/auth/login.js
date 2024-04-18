@@ -15,7 +15,7 @@ const login = async (req, res) => {
       return res.status(401).json({ error: "Credenciales incorrectas" });
 
     if (!user.status)
-      return res.status(404).json({ error: "Usuario no encontrado" });
+      return res.status(404).json({ error: "Su usuario ha sido baneado" });
 
     const passwordValid = await bcryptHelpers.comparePassword(
       password,

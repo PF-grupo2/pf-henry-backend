@@ -27,7 +27,7 @@ router.delete(
 router.get(
   "/users/:id",
   jwtMiddlewares.validatJWT,
-  securityMiddlewares.isAdmin,
+  //securityMiddlewares.isAdmin,
   saleControllers.getSale.getSalesByUser
 );
 router.get(

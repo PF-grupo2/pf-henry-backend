@@ -7,6 +7,9 @@ export const SaleDetailModel = (sequelize) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4,
     },
+    title: {
+      type: DataTypes.STRING,
+    },
     amount: {
       type: DataTypes.INTEGER,
       allowNull: true,

@@ -1,30 +1,44 @@
 import { MercadoPagoConfig, Preference } from "mercadopago";
+import { Sale } from "../../database/index.js";
+import { response } from "express";
+import { saleHelpers } from "../../helpers/index.js";
 //import { ACCESS_TOKEN } from "../../config/index.js";
 
-const ACCESS_TOKEN = "TEST-8325916074213905-041120-4055cd09b453e71a2e63f60b35942659-1756430153"
-const client = new MercadoPagoConfig({ accessToken: ACCESS_TOKEN});
+const ACCESS_TOKEN =
+  "TEST-8325916074213905-041120-4055cd09b453e71a2e63f60b35942659-1756430153";
+const client = new MercadoPagoConfig({ accessToken: ACCESS_TOKEN });
 
-const postMercadoSale = async (req, res) => {
+const postMercadoSale = async (req, res = response) => {
+  const { id: UserId } = req.user;
   try {
     const { items } = req.body;
-
-    console.log("Esto es lo q llega del front:", items);
 
     const body = {
       items,
       back_urls: {
-        success: "https://github.com/PF-grupo2/pf-henry-frontend", //cambiarlos por la url del deploy
-        failure: "https://github.com/PF-grupo2/pf-henry-frontend",
-        pending: "https://github.com/PF-grupo2/pf-henry-frontend",
+        success: "https://shoe-kingdom-ae164.web.app/sale-success", //cambiarlos por la url del deploy
+        failure: "https://shoe-kingdom-ae164.web.app/",
+        pending: "https://shoe-kingdom-ae164.web.app/",
       },
       auto_return: "approved",
-      notification_url: `https://pf-henry-backend-agsr.onrender.com/mercadopago/webhook`,
     };
     const preference = new Preference(client);
     const result = await preference.create({ body });
 
+    const total = items.reduce((acc, current) => {
+      return (acc += current.unit_price * current.quantity);
+    }, 0);
+
+    const newSale = await Sale.create({
+      total,
+      date: Date.now(),
+      UserId,
+    });
+
+    await saleHelpers.saveSaleDetail(newSale.id, items);
     res.json({ id: result.id });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({
       message: error.message,
     });

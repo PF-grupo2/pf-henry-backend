@@ -1,4 +1,4 @@
-import { User } from "../../database/index.js";
+import { Cart, User } from "../../database/index.js";
 import { bcryptHelpers, emailHelpers } from "../../helpers/index.js";
 
 const postUser = async (req, res) => {
@@ -27,6 +27,10 @@ const postUser = async (req, res) => {
     };
     if (isAdmin) userData.isAdmin = isAdmin;
     const createdUser = await User.create(userData);
+    if (!createdUser.isAdmin)
+      await Cart.create({
+        UserId: createdUser.id,
+      });
     // Envío de email de notificación registro al nuevo usuario
     emailHelpers.sendEmail(userData.mail, userData.name);
     res.status(201).json(createdUser);

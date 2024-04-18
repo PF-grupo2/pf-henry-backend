@@ -21,7 +21,7 @@ const getAllProducts = async (req, res) => {
     data.hasSearch = false; //informa si se ha solicitado o no una busqueda, es falso por default
 
     const dataTypes = await Product.describe();//trae el tipo de dato que es cada campo analizado (se usa para verificar si es un arreglo o no)
-    const conditions = {status: true};//aca se guradan las condiciones de filtrado, por defecto incluye la exclusion de aquellos productos con status=false
+    const conditions = {};//aca se guradan las condiciones de filtrado, por defecto incluye la exclusion de aquellos productos con status=false
 
     if(filters.search){ //de haber una solicitud de busqueda, la añade a las condiciones de filtrado
       data.hasSearch = true;

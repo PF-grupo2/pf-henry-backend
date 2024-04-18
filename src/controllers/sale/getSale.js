@@ -1,8 +1,10 @@
-import { Sale, SaleDetail } from "../../database/index.js";
+import { Sale, SaleDetail, User } from "../../database/index.js";
 
 const getAll = async (req, res) => {
   try {
-    const sale = await Sale.findAll();
+    const sale = await Sale.findAll({
+      include: [SaleDetail, User],
+    });
     res.json(sale);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -16,6 +18,7 @@ const getSalesByUser = async (req, res) => {
       where: {
         UserId: id,
       },
+      include: [SaleDetail],
     });
 
     return res.status(200).json(sales);
@@ -33,6 +36,7 @@ const getSalesByProduct = async (req, res) => {
       where: {
         ProductId: id,
       },
+      include: [SaleDetail],
     });
 
     return res.status(200).json(sales);

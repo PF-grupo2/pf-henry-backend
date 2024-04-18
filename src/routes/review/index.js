@@ -29,4 +29,18 @@ router.put(
   reviewControllers.putReviews
 );
 
+router.get(
+  "/user/:id",
+  jwtMiddlewares.validatJWT,
+  securityMiddlewares.isAdmin,
+  reviewControllers.getReview.getReviewsByUser
+);
+
+router.get(
+  "/product/:id",
+  jwtMiddlewares.validatJWT,
+  securityMiddlewares.isAdmin,
+  reviewControllers.getReview.getReviewsByProduct
+)
+
 export default router;

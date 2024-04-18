@@ -8,7 +8,18 @@ export const loader = async () => {
     if (productsDB.length < products.length) {
       await Product.bulkCreate(products);
     }
-    if (usersDB.length < users.length) {
+
+    if (usersDB.length > 0) {
+      for (let user of usersDB) {
+        const foundUser = users.find(
+          (currentUser) => currentUser.email === user.email
+        );
+        if (!foundUser) {
+          await usersDB.create(user);
+          await usersDB.save();
+        }
+      }
+    } else {
       await User.bulkCreate(users);
     }
   } catch (error) {

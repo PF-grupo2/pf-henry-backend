@@ -21,6 +21,10 @@ router.get(
 router.get("/detail/:id", productControllers.getProductById);
 router.get("/search", productControllers.getProductByName);
 
+router.put("/stock/:id/:quantity", productControllers.updateStock)
+
+router.delete('/delete/:id', productControllers.deleteProducts);
+
 // Middlewares Implementaion
 
 /*

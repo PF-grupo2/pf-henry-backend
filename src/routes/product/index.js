@@ -23,6 +23,8 @@ router.get("/search", productControllers.getProductByName);
 
 router.put("/stock/:id/:quantity", productControllers.updateStock)
 
+router.put("/edit/:id", productControllers.putProducts)
+
 router.delete('/delete/:id', productControllers.deleteProducts);
 
 // Middlewares Implementaion

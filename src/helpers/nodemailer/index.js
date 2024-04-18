@@ -36,7 +36,7 @@ const saleNotification = (to, name, products) => {
   products.forEach((product) => {
     const subtotal = (product.unit_price * product.quantity).toFixed(2);
     productsHtml += `<tr>
-        <td>${product.name}</td>
+        <td>${product.title}</td>
         <td>$ ${product.unit_price.toFixed(2)}</td>
         <td>${product.quantity}</td>  
         <td>$ ${subtotal}</td> 

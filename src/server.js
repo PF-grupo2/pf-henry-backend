@@ -9,6 +9,7 @@ const server = express();
 
 // Middlewares
 server.use(express.json());
+
 server.use(cors({
   origin: [
     "https://pf-henry-backend.onrender.com",

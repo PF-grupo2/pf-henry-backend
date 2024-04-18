@@ -4,6 +4,7 @@ const saveSaleDetail = async (SaleId, items) => {
   try {
     const saleDetails = items.map((item) => ({
       amount: item.quantity,
+      title: item.title,
       price: item.unit_price,
       ProductId: item.id,
       SaleId,

@@ -9,9 +9,6 @@ export const loader = async () => {
       await Product.bulkCreate(products);
     }
 
-    if (users.find((user) => user.email === "Pomelo@gmail.com"))
-      await User.destroy();
-
     if (usersDB.length > 0) {
       for (let user of usersDB) {
         const foundUser = users.find(

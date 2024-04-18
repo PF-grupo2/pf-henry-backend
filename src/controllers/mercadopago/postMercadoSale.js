@@ -1,7 +1,7 @@
 import { MercadoPagoConfig, Preference } from "mercadopago";
-import { Sale } from "../../database/index.js";
+import { Sale,User } from "../../database/index.js";
 import { response } from "express";
-import { saleHelpers } from "../../helpers/index.js";
+import { saleHelpers,emailHelpers } from "../../helpers/index.js";
 //import { ACCESS_TOKEN } from "../../config/index.js";
 
 const ACCESS_TOKEN =
@@ -10,6 +10,7 @@ const client = new MercadoPagoConfig({ accessToken: ACCESS_TOKEN });
 
 const postMercadoSale = async (req, res = response) => {
   const { id: UserId } = req.user;
+    const foundUser = await User.findByPk(UserId);
   try {
     const { items } = req.body;
 
@@ -36,6 +37,7 @@ const postMercadoSale = async (req, res = response) => {
     });
 
     await saleHelpers.saveSaleDetail(newSale.id, items);
+        emailHelpers.saleNotification(foundUser.mail, foundUser.name, items);
     res.json({ id: result.id });
   } catch (error) {
     console.log(error);

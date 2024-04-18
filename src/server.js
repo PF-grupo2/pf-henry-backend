@@ -14,6 +14,7 @@ server.use(cors({
     "https://pf-henry-backend.onrender.com",
      "http://localhost:5173",
      "https://shoe-kingdom-ae164.web.app/",
+     "https://cloudinary.com",
     ],
   credentials: true,
 }));
